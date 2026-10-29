@@ -1,0 +1,99 @@
+{
+  "name": "News Traffic Engine - Omnichannel Syndication Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "news-publish-webhook",
+        "responseMode": "onReceived",
+        "responseData": "allEntries"
+      },
+      "id": "1",
+      "name": "CMS Webhook (Article Published)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare omnichannel payloads\nconst item = $input.first().json;\nconst headline = item.headline || item.title;\nconst url = item.url;\nconst summary = item.summary || item.lead;\nconst image = item.image_url || '';\nconst tags = (item.tags || []).map(t => '#' + t.replace(/\\s+/g, '_')).join(' ');\n\nconst telegramText = `🔥 <b>${headline}</b>\\n\\n${summary}\\n\\n🔗 <a href=\"${url}\">مطالعه کامل خبر</a>\\n\\n${tags}`;\nconst xText = `${headline}\\n\\n${url}\\n\\n${tags}`.slice(0, 275);\n\nreturn [{\n  json: {\n    headline,\n    url,\n    summary,\n    image,\n    telegramText,\n    xText,\n    tags\n  }\n}];"
+      },
+      "id": "2",
+      "name": "Format Multi-Platform Copy",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{$env.TELEGRAM_CHANNEL_ID}}",
+        "text": "={{$json.telegramText}}",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "3",
+      "name": "Telegram Channel Dispatch",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [700, 160]
+    },
+    {
+      "parameters": {
+        "url": "https://eitaayar.ir/api/{{$env.EITAAYAR_TOKEN}}/sendMessage",
+        "method": "POST",
+        "bodyParametersUi": {
+          "parameter": [
+            { "name": "chat_id", "value": "={{$env.EITAA_CHANNEL_ID}}" },
+            { "name": "text", "value": "={{$json.telegramText}}" }
+          ]
+        }
+      },
+      "id": "4",
+      "name": "Eitaa Channel Dispatch (HTTP)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://tapi.bale.ai/bot{{$env.BALE_BOT_TOKEN}}/sendMessage",
+        "method": "POST",
+        "bodyParametersUi": {
+          "parameter": [
+            { "name": "chat_id", "value": "={{$env.BALE_CHANNEL_ID}}" },
+            { "name": "text", "value": "={{$json.telegramText}}" }
+          ]
+        }
+      },
+      "id": "5",
+      "name": "Bale Messenger Dispatch (HTTP)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 440]
+    },
+    {
+      "parameters": {
+        "text": "={{$json.xText}}"
+      },
+      "id": "6",
+      "name": "X / Twitter Post",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [940, 240]
+    }
+  ],
+  "connections": {
+    "CMS Webhook (Article Published)": {
+      "main": [[{ "node": "Format Multi-Platform Copy", "type": "main", "index": 0 }]]
+    },
+    "Format Multi-Platform Copy": {
+      "main": [
+        [{ "node": "Telegram Channel Dispatch", "type": "main", "index": 0 }],
+        [{ "node": "Eitaa Channel Dispatch (HTTP)", "type": "main", "index": 0 }],
+        [{ "node": "Bale Messenger Dispatch (HTTP)", "type": "main", "index": 0 }],
+        [{ "node": "X / Twitter Post", "type": "main", "index": 0 }]
+      ]
+    }
+  }
+}

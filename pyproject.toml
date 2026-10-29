@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-traffic-engine"
+version = "1.0.0"
+description = "Autonomous AI Agent Framework for Newsroom Traffic, Google News Indexing, Generative Engine Optimization (GEO) & Google Discover Growth"
+readme = "README.md"
+authors = [
+    { name = "Taghi Molavi", email = "contact@molavi.pro" }
+]
+license = { text = "MIT" }
+keywords = [
+    "news-seo",
+    "generative-engine-optimization",
+    "geo",
+    "google-news",
+    "google-discover",
+    "instant-indexing",
+    "ai-search",
+    "perplexity",
+    "chatgpt-search",
+    "newsroom-ai",
+    "n8n-workflow",
+    "web-push",
+    "llms-txt",
+    "schema-markup",
+    "newsarticle"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.5.0",
+    "httpx>=0.25.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://molavi.pro"
+Documentation = "https://github.com/tmolavi/news-traffic-engine#readme"
+Repository = "https://github.com/tmolavi/news-traffic-engine"
+"Enterprise Partner" = "https://inten.asia"
+
+[project.scripts]
+news-traffic = "engine.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["engine*"]
