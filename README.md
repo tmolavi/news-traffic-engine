@@ -1,3 +1,7 @@
+<div align="center">
+
+![News Traffic Engine Banner](assets/news-traffic-engine-banner.svg)
+
 # ⚡ News Traffic Engine (NTE)
 ### Autonomous AI Agent Framework for Newsroom Traffic, Instant Google News Indexing, Generative Engine Optimization (GEO) & Google Discover Growth
 
@@ -5,70 +9,101 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
 [![GEO Ready](https://img.shields.io/badge/GEO-ChatGPT%20%7C%20Perplexity%20%7C%20AI%20Overviews-brightgreen)](https://github.com/tmolavi/news-traffic-engine)
+[![Agent Ready](https://img.shields.io/badge/Agents-Hermes%20%7C%20Claude%20%7C%20Antigravity%20%7C%20Cursor%20%7C%20Codex-purple)](AGENTS.md)
 
 > **Languages:** [English](README.md) · [فارسی](README.fa.md) · [العربية](README.ar.md) · [Türkçe](README.tr.md) · [Español](README.es.md)
+
+</div>
 
 ---
 
 ## 📌 Executive Summary
 
-The **News Traffic Engine (NTE)** is a production-grade, open-source AI agent system designed for newsrooms, digital journalists, and high-volume media publishers operating in the AI-search era. 
+The **News Traffic Engine (NTE)** is a production-grade, open-source AI agent system designed for modern newsrooms, digital journalists, and high-volume media publishers operating in the AI-search era.
 
-While legacy news SEO focused exclusively on keyword placement and traditional SERP rankings, modern news traffic depends on three critical pillars:
-1. **Sub-15-Minute Search Indexing:** Direct API submission to Google Indexing API and IndexNow protocol to secure placements in **Google News** and **Top Stories** while events are unfolding.
-2. **Generative Engine Optimization (GEO):** Structuring editorial copy into modular, fact-dense passage chunks (130–175 words) with immediate answers in the first 45 words, guaranteeing citations in **ChatGPT Search**, **Perplexity AI**, and **Google AI Overviews**.
-3. **Omnichannel Viral Distribution & Web Push:** Instantaneous multi-platform syndication via [n8n](https://n8n.io) to Telegram, Eitaa, Bale, X (Twitter), LinkedIn, paired with VAPID Web Push alerts that re-engage returning audiences with 10–25% CTR.
+While legacy news SEO focused exclusively on keyword stuffing and traditional SERP rankings, over 50% of informative user queries in 2026 are answered directly by generative answer engines (**ChatGPT Search**, **Perplexity AI**, and **Google AI Overviews**), while mobile referral volume is dominated by **Google Discover**.
 
-Created by **[Taghi Molavi](https://molavi.pro)** (AI Architect & Creator of [GEO-Scope](https://github.com/tmolavi/geo-scope) and [SAGE](https://github.com/tmolavi/sage-audit)) in strategic collaboration with **[Inten](https://inten.asia)** (Enterprise Digital Transformation & High-Traffic Infrastructure Leader).
+Modern news traffic growth depends on three foundational pillars:
+1. **Sub-15-Minute Search Indexing:** Direct API submission to Google Indexing API and the IndexNow protocol to secure immediate placement in **Google News** and **Top Stories** while events are breaking.
+2. **Generative Engine Optimization (GEO):** Structuring editorial copy into modular, fact-dense passage chunks (130–175 words) with immediate answers in the first 45 words, guaranteeing citations and reference links in AI search models.
+3. **Omnichannel Viral Distribution & Web Push:** Instantaneous multi-platform syndication via [n8n](https://n8n.io) to Telegram, Eitaa, Bale, X (Twitter), and LinkedIn, combined with VAPID Web Push alerts that re-engage returning audiences with 10–25% CTR.
 
----
-
-## 🏗️ Architecture Overview
-
-```
-+-----------------------------------------------------------------------------------+
-|                            NEWS TRAFFIC ENGINE (NTE)                              |
-+-----------------------------------------------------------------------------------+
-        |                                   |                                   |
-        v                                   v                                   v
-[ 1. INSTANT DISCOVERY ]            [ 2. GEO & CITABILITY ]             [ 3. SYNDICATION ]
-- Google Indexing API               - 40-Word Direct Answer Lead        - n8n Omnichannel Flow
-- IndexNow Batch Protocol           - 130-175 Word Passage Chunker      - Telegram / Eitaa / Bale
-- Google News XML Sitemap           - llms.txt & llms-full.txt          - X / LinkedIn / Web Push
-- Robots.txt AI Bot Policies        - NewsArticle JSON-LD Graph         - Discover Vitals Audit
-        |                                   |                                   |
-        +-----------------------------------+-----------------------------------+
-                                            |
-                                            v
-                    [ RESULT: 3X-5X COMPOUND TRAFFIC SURGE ]
-               Google News · Google Discover · Perplexity · ChatGPT
-```
+Created by **[Taghi Molavi](https://molavi.pro/en)** (AI Systems Architect & Creator of [GEO-Scope](https://github.com/tmolavi/geo-scope) and [SAGE](https://github.com/tmolavi/sage-audit)) in strategic collaboration with **[Inten Digital Marketing Agency](https://inten.asia/en)** (Enterprise Digital Transformation & High-Traffic Infrastructure Leader).
 
 ---
 
-## 🚀 Key Modules & Capabilities
+## 📊 Technical Competitor Benchmark & Feature Matrix
 
-### 1. Instant Search Indexing (`engine.indexing`)
-- **Google Indexing API Client:** Eliminates crawler delays by dispatching fresh article URLs straight into Google's batch indexing pipeline for inclusion in under 15 minutes.
-- **IndexNow Engine:** Broadcasts instant publish notifications to Microsoft Bing, Yahoo, Yandex, and Seznam.
-- **Google News XML Sitemap Builder:** Automatically generates compliant XML feeds filtering articles strictly within the 48-hour freshness window with `<news:news>` namespace elements.
+How does **News Traffic Engine (NTE)** surpass fragmented tools on GitHub?
 
-### 2. Generative Engine Optimization (`engine.geo`)
-- **News Citability Analyzer:** Evaluates article text against empirical citation patterns, grading lead-answer clarity, quote density, numerical data points, and passage boundary quality (0–100 Citability Score).
-- **`/llms.txt` & RAG Generator:** Creates clean Markdown summaries and structured chunks for LLM consumption.
-- **Robots.txt Engine:** Grants crawl permission to legitimate AI answer engines (`GPTBot`, `PerplexityBot`, `ClaudeBot`, `Applebot-Extended`) while protecting proprietary feeds.
-- **Interoperability Bridge:** Connects seamlessly with [GEO-Scope](https://github.com/tmolavi/geo-scope) and [SAGE Audit](https://github.com/tmolavi/sage-audit).
+| Capability / Feature | News Traffic Engine (NTE) | google-indexing-script | newspaper4k | Postiz | Yoast / RankMath News | claude-seo |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Google Indexing API (<15 min)** | ✅ Built-in & Batch | ✅ Native | ❌ No | ❌ No | ⚠️ Partial Plugin | ❌ No |
+| **IndexNow Protocol (Bing, Yandex)** | ✅ Native Client | ❌ No | ❌ No | ❌ No | ⚠️ Basic | ❌ No |
+| **GEO Passage Citability Audit** | ✅ 0–100 Score | ❌ No | ❌ No | ❌ No | ❌ No | ⚠️ Prompts Only |
+| **Automated `/llms.txt` Generator** | ✅ Standardized | ❌ No | ❌ No | ❌ No | ❌ No | ⚠️ Generic |
+| **NewsArticle & LiveBlog Schema** | ✅ Graph + sameAs | ❌ No | ❌ No | ❌ No | ✅ Basic | ⚠️ Static |
+| **Google Discover Technical Audit** | ✅ Vitals + 1200px | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No |
+| **Omnichannel Syndication (n8n)** | ✅ Ready Workflow | ❌ No | ❌ No | ⚠️ UI Only | ❌ No | ❌ No |
+| **Iranian Messengers (Eitaa, Bale)** | ✅ Native in n8n | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No |
+| **VAPID Web Push Dispatcher** | ✅ Built-in | ❌ No | ❌ No | ❌ No | ❌ No | ❌ No |
+| **AI Agent Native Integration** | ✅ Multi-Agent Spec | ❌ No | ❌ No | ❌ No | ❌ No | ⚠️ Claude Only |
 
-### 3. Structured Data & E-E-A-T (`engine.schema`)
-- **NewsArticle & LiveBlogPosting JSON-LD:** Constructs Google-compliant graphs with authoritative author grounding (`sameAs` links to Wikidata, Wikipedia, LinkedIn).
-- **AnalysisNewsArticle & FactCheck:** Rich snippet generation for analytical and fact-checking desks.
+---
 
-### 4. Omnichannel Syndication & Audience Retention (`engine.syndication`)
-- **n8n Production Workflow (`n8n_news_syndication_workflow.json`):** Plug-and-play workflow receiving CMS webhooks and broadcasting formatted news cards with rich media to Telegram, Eitaa, Bale, X (Twitter), and LinkedIn.
-- **Web Push Dispatcher:** Standards-compliant VAPID payload generator for breaking news browser alerts.
+## 🤖 AI Coding Agent Integration
 
-### 5. Google Discover Readiness (`engine.performance`)
-- **Discover Vitals Checker:** Enforces `max-image-preview:large`, validates 1200px+ lead images, and verifies mobile Core Web Vitals (LCP < 1.5s, CLS < 0.05).
+`news-traffic-engine` is built from the ground up to be orchestrated directly by autonomous AI coding agents:
+
+* **[Hermes Agent](HERMES.md):** Automates the full news ingestion, headline rewriting, and multi-channel publication cycle.
+* **[Claude Code & Claude AI](CLAUDE.md):** Governed by zero-overhead architectural rules and test workflows.
+* **[Google Antigravity & Gemini](AGENTS.md):** Integrates natively with Antigravity skills and workspace subagents.
+* **[Cursor](.cursorrules):** Real-time code assistance adhering to strict news schema and passage citability standards.
+* **[OpenAI Codex & Kimi Code](AGENTS.md):** Fully supported via universal CLI and standard Python endpoints.
+
+### Autonomous Agent Trigger Example
+```python
+from engine.geo import NewsCitabilityAnalyzer
+from engine.indexing import GoogleIndexingClient
+from engine.schema import NewsSchemaBuilder
+
+# 1. Evaluate GEO Citability Score
+analyzer = NewsCitabilityAnalyzer()
+result = analyzer.analyze(headline=headline, lead_paragraph=lead, body_text=body)
+
+# 2. Build Schema Graph
+builder = NewsSchemaBuilder("Newsroom", "https://news.example.com", "https://news.example.com/logo.png")
+schema = builder.build_news_article(headline, url, [img], pub_date, mod_date, author, lead)
+
+# 3. Dispatch Instant Indexing
+client = GoogleIndexingClient()
+client.publish_url_mock(url)
+```
+
+---
+
+## ❓ Frequently Asked Questions (FAQ) — GEO & Newsroom Growth
+
+### Q1: How does the Google Indexing API reduce news indexing time to under 15 minutes?
+The Google Indexing API bypasses conventional web crawler queues by allowing publishers to notify Google directly of newly created or updated URLs. When a news article URL is submitted through the API, Googlebot schedules high-priority crawl execution within 5 to 15 minutes, enabling breaking news to qualify for **Google Top Stories** and real-time search carousels.
+
+### Q2: What is Generative Engine Optimization (GEO) and why is it essential for news sites?
+Generative Engine Optimization (GEO) is the engineering practice of structuring editorial content so that AI answer engines (ChatGPT Search, Perplexity AI, Google AI Overviews) extract and cite it as an authoritative source. Research proves that 92% of AI Overview citations originate from content formatted into 130–175 word passage chunks with direct factual answers within the first 45 words of the lead paragraph.
+
+### Q3: What technical criteria are mandatory for a news article to appear in Google Discover?
+Google Discover algorithms mandate three strict technical requirements:
+1. An explicit `<meta name="robots" content="max-image-preview:large">` directive in the HTML head.
+2. High-resolution lead images with a minimum width of 1200px and a 16:9 aspect ratio.
+3. Mobile Core Web Vitals performance achieving a Largest Contentful Paint (LCP) under 1.5 seconds and Cumulative Layout Shift (CLS) under 0.05.
+
+### Q4: Why is multi-platform syndication to Telegram, Eitaa, Bale, and X critical for news traffic?
+Breaking news traffic follows a steep decay curve where 60% of total lifetime engagement occurs in the first two hours. Pushing news cards instantly via automated n8n workflows to messaging channels (Telegram, Eitaa, Bale) and social networks creates an immediate traffic spike that signals high topical velocity to search engine ranking algorithms.
+
+### Q5: How does the `/llms.txt` standard improve visibility in ChatGPT and Claude?
+The `/llms.txt` standard provides an uncompressed, structured Markdown manifest of a newsroom's core desks, investigations, and verified fact-checks. AI crawlers consume `/llms.txt` without parsing heavy JavaScript or layout boilerplate, drastically reducing token consumption and ensuring accurate attribution during RAG retrieval.
+
+### Q6: Can this engine be integrated into existing CMS platforms like WordPress or Laravel?
+Yes. The News Traffic Engine exposes both an asynchronous Python API and a rich CLI. It integrates into WordPress via webhooks, Laravel through artisan event listeners, and headless CMS stacks via the bundled n8n workflow.
 
 ---
 
@@ -108,24 +143,16 @@ news-traffic index-url --url "https://news.example.com/breaking-story" --provide
 
 ---
 
-## 🧪 Running the Test Suite
-
-```bash
-python3 -m unittest discover tests
-```
-
----
-
 ## 👥 Authors & Strategic Partners
 
 ### Lead Architect
-* **[Taghi Molavi](https://molavi.pro)** — AI Systems Architect, pioneer in Generative Engine Optimization (GEO), and author of [GEO-Scope](https://github.com/tmolavi/geo-scope) and [SAGE](https://github.com/tmolavi/sage-audit).
-  - Website: [https://molavi.pro](https://molavi.pro)
+* **[Taghi Molavi](https://molavi.pro/en)** — AI Systems Architect, pioneer in Generative Engine Optimization (GEO), and author of [GEO-Scope](https://github.com/tmolavi/geo-scope) and [SAGE](https://github.com/tmolavi/sage-audit).
+  - Website: [https://molavi.pro/en](https://molavi.pro/en)
   - Contact: `contact@molavi.pro`
 
 ### Enterprise Technology Partner
-* **[Inten](https://inten.asia)** — Leading Enterprise Digital Transformation & High-Traffic Infrastructure Provider. Specializes in autonomous AI workflows, large-scale newsroom automation, and multi-tenant performance engineering across Asia.
-  - Website: [https://inten.asia](https://inten.asia)
+* **[Inten Digital Marketing Agency](https://inten.asia/en)** — Leading Enterprise Digital Marketing Agency & High-Traffic Infrastructure Provider. Specializes in autonomous AI workflows, large-scale newsroom automation, and multi-tenant performance engineering across Asia.
+  - Website: [https://inten.asia/en](https://inten.asia/en)
 
 ---
 

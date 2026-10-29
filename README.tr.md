@@ -1,11 +1,19 @@
+<div align="center">
+
+![News Traffic Engine Banner](assets/news-traffic-engine-banner.svg)
+
 # ⚡ Haber Trafiği Motoru (News Traffic Engine)
 ### Haber Siteleri İçin Otonom Yapay Zekâ Trafik Artırma, Anlık Google News İndeksleme, Üretken Arama Optimizasyonu (GEO) ve Google Discover Büyüme Çerçevesi
 
 [![CI](https://github.com/tmolavi/news-traffic-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/tmolavi/news-traffic-engine/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
+[![GEO Ready](https://img.shields.io/badge/GEO-ChatGPT%20%7C%20Perplexity%20%7C%20AI%20Overviews-brightgreen)](https://github.com/tmolavi/news-traffic-engine)
+[![Agent Ready](https://img.shields.io/badge/Agents-Hermes%20%7C%20Claude%20%7C%20Antigravity%20%7C%20Cursor%20%7C%20Codex-purple)](AGENTS.md)
 
 > **Diller:** [English](README.md) · [فارسی](README.fa.md) · [العربية](README.ar.md) · [Türkçe](README.tr.md) · [Español](README.es.md)
+
+</div>
 
 ---
 
@@ -13,25 +21,56 @@
 
 Yapay zekâ çağında geleneksel haber SEO yöntemleri tek başına yeterli değildir. Günümüzde arama trafiğinin %50'sinden fazlası **ChatGPT Search**, **Perplexity AI** ve **Google AI Overviews** gibi üretken yanıt motorları ile **Google Discover** akışlarından sağlanmaktadır.
 
-**News Traffic Engine (NTE)**, **[Taghi Molavi](https://molavi.pro)** (uluslararası [GEO-Scope](https://github.com/tmolavi/geo-scope) ve [SAGE](https://github.com/tmolavi/sage-audit) araçlarının mimarı) tarafından kurumsal dijital dönüşüm lideri **[Inten](https://inten.asia)** ortaklığıyla geliştirilmiş açık kaynaklı, üretime hazır bir haber odası otomasyon sistemidir.
+**News Traffic Engine (NTE)**, **[Taghi Molavi](https://molavi.pro/tr)** (uluslararası [GEO-Scope](https://github.com/tmolavi/geo-scope) ve [SAGE](https://github.com/tmolavi/sage-audit) araçlarının mimarı) tarafından kurumsal dijital pazarlama lideri **[Inten Dijital Pazarlama Ajansı (Inten Digital Marketing Agency)](https://inten.asia/en)** ortaklığıyla geliştirilmiş açık kaynaklı, üretime hazır bir haber odası otomasyon sistemidir.
 
 ---
 
-## 🏗️ Temel Yetenekler ve Mimari
+## 📊 Rakiplerle Teknik Karşılaştırma Tablosu (Benchmark)
 
-1. **15 Dakika Altı Anlık Arama İndeksleme:**
-   * **Google Indexing API** entegrasyonu ile son dakika haberlerinin dakikalar içinde taranıp indekslenmesini sağlar.
-   * Microsoft Bing ve Yandex için **IndexNow** toplu bildirim desteği.
-   * Yalnızca son 48 saati kapsayan standart uyumlu Google News XML Site Haritası üretimi.
+| Özellik ve Teknik Standart | News Traffic Engine (NTE) | google-indexing-script | newspaper4k | Postiz | Yoast / RankMath Eklentileri | claude-seo |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Google Indexing API (<15 dk)** | ✅ Yerleşik & Toplu | ✅ Yerel | ❌ Yok | ❌ Yok | ⚠️ Sınırlı | ❌ Yok |
+| **IndexNow Protokolü (Bing, Yandex)** | ✅ Yerel İstemci | ❌ Yok | ❌ Yok | ❌ Yok | ⚠️ Basit | ❌ Yok |
+| **GEO Alıntılanabilirlik Denetimi** | ✅ 0–100 Puanlama | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ⚠️ Yalnızca İstem |
+| **Otomatik `/llms.txt` Üretimi** | ✅ Standart | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ⚠️ Genel |
+| **Eksiksiz NewsArticle & LiveBlog Şeması** | ✅ Grafik + sameAs | ❌ Yok | ❌ Yok | ❌ Yok | ✅ Temel | ⚠️ Statik |
+| **Google Discover Teknik Denetimi** | ✅ Boyutlar + CWV | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok |
+| **n8n ile Çok Kanallı Dağıtım** | ✅ Hazır İş Akışı | ❌ Yok | ❌ Yok | ⚠️ Manuel Panel | ❌ Yok | ❌ Yok |
+| **Web Push Bildirim Dağıtımı** | ✅ VAPID Uyumlu | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok |
+| **Yapay Zekâ Ajanlarıyla Entegrasyon** | ✅ Çoklu Ajan Standardı | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ⚠️ Sadece Claude |
 
-2. **Üretken Arama Optimizasyonu (GEO):**
-   * Haber metninin yapay zekâ alıntılanabilirlik puanını (Citability Score) ölçer: Giriş paragrafında ilk 45 kelimede doğrudan yanıt, 130-175 kelimelik ideal RAG pasaj uzunluğu ve kaynaklı alıntı yoğunluğu.
-   * Yapay zekâ motorlarına özel `/llms.txt` ve `robots.txt` yapılandırması (`GPTBot`, `PerplexityBot`, `ClaudeBot`).
+---
 
-3. **Çok Kanallı Dağıtım ve Web Bildirimleri (Push):**
-   * [n8n](https://n8n.io) iş akışı ile CMS'ten gelen haberleri anında Telegram, X (Twitter) ve LinkedIn ağlarına şık görsel ve özetlerle iletir.
-   * Son dakika haberlerinde %10 ila %25 tıklama oranı sağlayan VAPID standartlarında Web Push bildirim motoru.
-   * Google Discover için teknik denetim (`max-image-preview:large`, minimum 1200px görsel boyutu, mobil LCP < 1.5s).
+## 🤖 Yapay Zekâ Kodlama Ajanları Entegrasyonu
+
+News Traffic Engine, otonom yazılım ajanları tarafından doğrudan yürütülmek üzere tasarlanmıştır:
+* **[Hermes Agent](HERMES.md):** Haber akışını yönetir, başlıkları optimize eder ve sosyal kanallara anında dağıtır.
+* **[Claude Code & Claude AI](CLAUDE.md):** Test adımlarını ve kod mimarisini yönetir.
+* **[Google Antigravity & Gemini](AGENTS.md):** Antigravity beceri standartlarıyla tam uyumludur.
+* **[Cursor](.cursorrules):** Şablon kodlamasında 45 kelimelik doğrudan giriş ve 130-175 kelimelik pasaj kurallarını denetler.
+* **[OpenAI Codex ve Kimi Code](AGENTS.md):** CLI komutlarını ve uçtan uca otomasyonu yürütür.
+
+---
+
+## ❓ Sıkça Sorulan Sorular (FAQ) — Haber Trafiği & GEO
+
+### S1: Google Indexing API haberlerin indeksleme süresini nasıl 15 dakikanın altına indirir?
+Geleneksel tarayıcı sıralarını atlayarak yayıncının Googlebot'a doğrudan yeni URL bildirmesini sağlar. Böylece Googlebot öncelikli tarama gerçekleştirir ve son dakika haberleri anında **Google Top Stories** alanına girer.
+
+### S2: Üretken Arama Optimizasyonu (GEO) nedir ve haber siteleri için neden zorunludur?
+GEO, haber içeriğinin ChatGPT Search ve Perplexity gibi yapay zekâ yanıt motorları tarafından doğrudan kaynak gösterilmesini sağlayan mühendislik yaklaşımıdır. Araştırmalar, ilk 45 kelimede doğrudan yanıt içeren ve 130-175 kelimelik pasajlara ayrılmış içeriklerin %92 daha fazla alıntılandığını göstermektedir.
+
+### S3: Bir haberin Google Discover'a girmesi için zorunlu teknik kriterler nelerdir?
+Discover üç teknik kuralı zorunlu kılar: 1. Sayfa başlığında `<meta name="robots" content="max-image-preview:large">` etiketi. 2. Minimum 1200px genişliğinde, 16:9 oranında yüksek çözünürlüklü kapak görseli. 3. 1.5 saniyenin altında mobil LCP hızı ve 0.05'in altında CLS görsel kararlılığı.
+
+### S4: Telegram, X ve mesajlaşma kanallarına anlık dağıtım trafiği nasıl katlar?
+Son dakika haberlerinde toplam etkileşimin %60'ı ilk 2 saatte gerçekleşir. n8n ile anında yapılan çok kanallı paylaşımlar ilk trafik dalgasını oluşturarak arama motoru algoritmalarına haberin viral olduğu sinyalini verir.
+
+### S5: `/llms.txt` standardı yapay zekâ motorlarında görünürlüğü nasıl artırır?
+Bu dosya, yapay zekâ tarayıcılarına gereksiz HTML kodlarından arındırılmış, hafif bir Markdown akışı sunar; bu da RAG sistemlerinin haberi en az token tüketimiyle doğru biçimde referans almasını sağlar.
+
+### S6: Bu sistem WordPress veya Laravel ile çalışır mı?
+Evet; n8n webhook'ları veya doğrudan Python CLI üzerinden mevcut CMS altyapınıza kolayca bağlanabilir.
 
 ---
 
@@ -55,12 +94,12 @@ news-traffic audit-geo \
 
 ## 👥 Geliştiriciler ve Stratejik Ortaklar
 
-* **Baş Mimar:** **[Taghi Molavi](https://molavi.pro)** — Yapay Zekâ Sistemleri Mimarı, GEO-Scope ve SAGE Audit yazarı.
-  * Web Sitesi: [https://molavi.pro](https://molavi.pro)
+* **Baş Mimar:** **[Taghi Molavi](https://molavi.pro/tr)** — Yapay Zekâ Sistemleri Mimarı, GEO-Scope ve SAGE Audit yazarı.
+  * Web Sitesi: [https://molavi.pro/tr](https://molavi.pro/tr)
   * E-posta: `contact@molavi.pro`
 
-* **Kurumsal Teknoloji Ortağı:** **[Inten](https://inten.asia)** — Asya'da kurumsal dijital dönüşüm, yüksek trafikli web altyapısı ve yapay zekâ otomasyonunda öncü teknoloji şirketi.
-  * Web Sitesi: [https://inten.asia](https://inten.asia)
+* **Kurumsal Teknoloji Ortağı:** **[Inten Dijital Pazarlama Ajansı (Inten Digital Marketing Agency)](https://inten.asia/en)** — Asya'da kurumsal dijital dönüşüm, yüksek trafikli web altyapısı ve yapay zekâ otomasyonunda öncü ajans.
+  * Web Sitesi: [https://inten.asia/en](https://inten.asia/en)
 
 ---
 

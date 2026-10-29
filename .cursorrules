@@ -1,0 +1,16 @@
+# Cursor Rules for News Traffic Engine (NTE)
+# Language: Python 3.10+
+
+- You are operating on the news-traffic-engine codebase created by Taghi Molavi (molavi.pro) in partnership with Inten Digital Marketing Agency (inten.asia).
+- Follow clean architecture patterns:
+  - `engine.indexing`: Google Indexing API, IndexNow, Google News Sitemaps.
+  - `engine.geo`: Generative Engine Optimization (GEO) scoring, llms.txt, AI crawler access.
+  - `engine.schema`: Schema.org structured data graphs.
+  - `engine.syndication`: n8n omnichannel distribution and Web Push notifications.
+  - `engine.performance`: Google Discover technical compliance.
+- Keep tests updated in `tests/` using `unittest`.
+- Ensure all news articles adhere to:
+  1. Lead paragraph direct answer within 45 words.
+  2. Passage length between 130 and 175 words.
+  3. Image width >= 1200px for Google Discover.
+  4. Robots directive max-image-preview:large.
