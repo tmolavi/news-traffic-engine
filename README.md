@@ -143,6 +143,16 @@ news-traffic index-url --url "https://news.example.com/breaking-story" --provide
 
 ---
 
+## 🏛️ TM Open Source Ecosystem Synergy
+
+`News Traffic Engine` directly integrates with our open-source agent and intelligence framework:
+* **[TM Molavi Agentic OS](https://github.com/tmolavi/molavi-agentic-os)**: Flagship open-source operating ecosystem for autonomous AI agents, skills, and multi-agent production teams (`pip install molavi-agentic-os`).
+* **[TM Second Brain](https://github.com/tmolavi/tm-second-brain)**: Local-first Markdown and Obsidian persistent memory infrastructure for AI agents.
+* **[Humanize-AI-Copywriter](https://github.com/tmolavi/humanize-ai-copywriter)**: Zero-entropy human conversion copywriting engine.
+* **[GEO-Scope](https://github.com/tmolavi/geo-scope)**: Empirical AI Answer Visibility Measurement Framework.
+
+---
+
 ## 👥 Authors & Strategic Partners
 
 ### Lead Architect
